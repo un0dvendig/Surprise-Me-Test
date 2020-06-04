@@ -1,0 +1,15 @@
+# Xcode
+
+## User settings
+Xcuserdata/
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Build generated
+.build/
+
+## CocoaPods
+Pods/
