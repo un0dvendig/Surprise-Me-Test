@@ -40,6 +40,7 @@
 		DDEAF662248C02DB003BD54D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF661248C02DB003BD54D /* CodeView.swift */; };
 		DDEAF664248C08B4003BD54D /* CodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF663248C08B4003BD54D /* CodeViewModel.swift */; };
 		DDEAF666248C1067003BD54D /* UIColor+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF665248C1067003BD54D /* UIColor+CustomColor.swift */; };
+		DDEAF668248C1FAC003BD54D /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF667248C1FAC003BD54D /* AlertHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		DDEAF661248C02DB003BD54D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		DDEAF663248C08B4003BD54D /* CodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewModel.swift; sourceTree = "<group>"; };
 		DDEAF665248C1067003BD54D /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
+		DDEAF667248C1FAC003BD54D /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				DDEAF63224893B0A003BD54D /* ImageCache.swift */,
 				DDEAF64B248B94CA003BD54D /* URLBuilder.swift */,
 				DDEAF659248BEE28003BD54D /* URLRequestBuilder.swift */,
+				DDEAF667248C1FAC003BD54D /* AlertHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				DDEAF664248C08B4003BD54D /* CodeViewModel.swift in Sources */,
 				DDEAF63024893AE8003BD54D /* AsyncImageView.swift in Sources */,
 				DDEAF662248C02DB003BD54D /* CodeView.swift in Sources */,
+				DDEAF668248C1FAC003BD54D /* AlertHandler.swift in Sources */,
 				DDEAF60424892026003BD54D /* AppDelegate.swift in Sources */,
 				DDEAF64A248B8602003BD54D /* Showplace.swift in Sources */,
 				DDEAF62524892381003BD54D /* MainCoordinator.swift in Sources */,

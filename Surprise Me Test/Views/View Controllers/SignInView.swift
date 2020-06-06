@@ -11,6 +11,10 @@ import SKCountryPicker
 
 class SignInView: UIView {
     
+    // MARK: - Properties
+    
+    weak var alertHandler: AlertHandler?
+    
     // MARK: - Subviews
     
     lazy var signInFakeDragView: UIView = {
@@ -210,7 +214,6 @@ class SignInView: UIView {
         }
         
         if let url = viewModel.showPlaceImageURL {
-            // TODO: Handle errors.
             signInShowplaceImageView.loadImageFrom(url: url) { [weak self] (result) in
                 switch result {
                 case .success():
@@ -218,14 +221,15 @@ class SignInView: UIView {
                         self?.signInShowplaceImageLoadingActivityIndicator.stopAnimating()
                     }
                 case .failure(let error):
-                    let title = "An error occurred while loading image"
-                    print(error.localizedDescription)
                     DispatchQueue.main.async {
+                        self?.alertHandler?.showAlertDialog(title: error.localizedDescription, message: nil)
                         self?.signInShowplaceImageLoadingActivityIndicator.stopAnimating()
                     }
                 }
             }
         } else {
+            let error = CustomError.errorWithText("The view model has no image url, but should have one")
+            alertHandler?.showAlertDialog(title: error.localizedDescription, message: nil)
             signInShowplaceImageLoadingActivityIndicator.stopAnimating()
         }
     }
@@ -448,7 +452,7 @@ class SignInView: UIView {
         ])
     }
     
-    
+    // TODO: Handle this
     @objc
     private func handleAsAnotherUser(_ tap: UITapGestureRecognizer) {
         guard let text = signInNotYouLabel.text else {
@@ -457,7 +461,7 @@ class SignInView: UIView {
         let asAnotherPersonText = "Sign in as another peron"
         let anotherPersonTextRange = (text as NSString).range(of: asAnotherPersonText)
         if tap.didTapAttributedTextInLabel(label: signInNotYouLabel, inRange: anotherPersonTextRange) {
-            print("YES!")
+            print("should change interface...")
         }
     }
 

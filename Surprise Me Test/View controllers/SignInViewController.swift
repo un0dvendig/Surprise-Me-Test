@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
     
     // MARK: - Private properties
     
+    private var alerHandler: AlertHandler?
     private var currentUser: User? // Potentially, should be obtained from some in-app storage.
     private var viewReference: SignInView?
     private var viewModel: SignInViewModel?
@@ -25,13 +26,19 @@ class SignInViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        
+        let alertHandler = AlertHandler(delegate: self)
+        self.alerHandler = alertHandler
+        
         let view = SignInView()
+        view.alertHandler = alertHandler
         self.viewReference = view
         self.view = view
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         setupViewModel()
         setupView()
@@ -86,16 +93,17 @@ class SignInViewController: UIViewController {
             return
         }
         
-        // TODO: Handle errors
         guard let countryCode = view.signInCountryCodeLabel.text,
             let phoneNumber = view.signInUserPhoneNumberTextField.text,
             !phoneNumber.isEmpty else {
-                print("Phone number is emtpy!")
+                view.signInUserPhoneNumberTextField.resignFirstResponder()
+                alerHandler?.showAlertDialog(title: "Phone number is empty", message: "Please fill in the phone number")
                 return
         }
         let clearPhoneNumber = phoneNumber.filter("0123456789".contains)
         guard clearPhoneNumber.count == 10 else {
-            print("Phone number is not complete!")
+            view.signInUserPhoneNumberTextField.resignFirstResponder()
+            alerHandler?.showAlertDialog(title: "Phone number is not complete", message: "Please fill in the phone number")
             return
         }
         

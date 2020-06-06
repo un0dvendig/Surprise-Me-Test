@@ -18,6 +18,7 @@ class CodeViewController: UIViewController {
     
     // MARK: - Private properties
     
+    private var alertHandler: AlertHandler?
     private var viewReference: CodeView?
     private var viewModel: CodeViewModel?
     
@@ -36,6 +37,8 @@ class CodeViewController: UIViewController {
         guard user != nil else {
             fatalError("User should be set at this point")
         }
+        
+        self.alertHandler = AlertHandler(delegate: self)
         
         setupViewModel()
         setupView()
@@ -86,12 +89,14 @@ class CodeViewController: UIViewController {
             let userId = viewModel?.userId else {
             return
         }
-        self.requestCode(forUserId: userId, andUserFullPhoneNumber: userPhoneNumber) { (result) in
+        self.requestCode(forUserId: userId, andUserFullPhoneNumber: userPhoneNumber) { [weak self] (result) in
             switch result {
             case .success(let code):
-                self.viewModel?.currentCheckCode = code
+                self?.viewModel?.currentCheckCode = code
             case .failure(let error):
-                print(error)
+                DispatchQueue.main.async {
+                    self?.alertHandler?.showAlertDialog(title: error.localizedDescription, message: nil)
+                }
             }
         }
     }
