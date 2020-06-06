@@ -3,18 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220BF455D67E817612C16394 /* Pods_Surprise_Me_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A1570F246D4703737E18C9 /* Pods_Surprise_Me_Test.framework */; };
 		DDEAF60424892026003BD54D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF60324892026003BD54D /* AppDelegate.swift */; };
 		DDEAF60824892026003BD54D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF60724892026003BD54D /* ViewController.swift */; };
 		DDEAF60B24892026003BD54D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEAF60924892026003BD54D /* Main.storyboard */; };
 		DDEAF60D24892026003BD54D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDEAF60C24892026003BD54D /* Assets.xcassets */; };
 		DDEAF61024892026003BD54D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEAF60E24892026003BD54D /* LaunchScreen.storyboard */; };
+		DDEAF623248922C2003BD54D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF622248922C2003BD54D /* Coordinator.swift */; };
+		DDEAF62524892381003BD54D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF62424892381003BD54D /* MainCoordinator.swift */; };
+		DDEAF627248932AB003BD54D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF626248932AB003BD54D /* SignInViewController.swift */; };
+		DDEAF6292489336B003BD54D /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF6282489336B003BD54D /* SignInCoordinator.swift */; };
+		DDEAF62C24893A9F003BD54D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF62B24893A9F003BD54D /* SignInView.swift */; };
+		DDEAF63024893AE8003BD54D /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF62F24893AE8003BD54D /* AsyncImageView.swift */; };
+		DDEAF63324893B0A003BD54D /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63224893B0A003BD54D /* ImageCache.swift */; };
+		DDEAF63524893B37003BD54D /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63424893B37003BD54D /* DownloadManager.swift */; };
+		DDEAF63724893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63624893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift */; };
+		DDEAF63A24893BE7003BD54D /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63924893BE7003BD54D /* CustomError.swift */; };
+		DDEAF63C24893C1E003BD54D /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63B24893C1E003BD54D /* DataWorker.swift */; };
+		DDEAF64024896EBD003BD54D /* PastelessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63F24896EBD003BD54D /* PastelessTextField.swift */; };
+		DDEAF643248B8431003BD54D /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF642248B8431003BD54D /* SignInViewModel.swift */; };
+		DDEAF646248B8486003BD54D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF645248B8486003BD54D /* User.swift */; };
+		DDEAF648248B84EB003BD54D /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF647248B84EB003BD54D /* Tour.swift */; };
+		DDEAF64A248B8602003BD54D /* Showplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF649248B8602003BD54D /* Showplace.swift */; };
+		DDEAF64C248B94CA003BD54D /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF64B248B94CA003BD54D /* URLBuilder.swift */; };
+		DDEAF64E248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF64D248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift */; };
+		DDEAF654248BCE66003BD54D /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF653248BCE66003BD54D /* PhoneNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031D0FA6CDCA776FCD8C60AD /* Pods-Surprise Me Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise Me Test.debug.xcconfig"; path = "Target Support Files/Pods-Surprise Me Test/Pods-Surprise Me Test.debug.xcconfig"; sourceTree = "<group>"; };
+		236EFB57D3AF28FC52DE8A0F /* Pods-Surprise Me Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise Me Test.release.xcconfig"; path = "Target Support Files/Pods-Surprise Me Test/Pods-Surprise Me Test.release.xcconfig"; sourceTree = "<group>"; };
+		99A1570F246D4703737E18C9 /* Pods_Surprise_Me_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surprise_Me_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEAF60024892026003BD54D /* Surprise Me Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Surprise Me Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEAF60324892026003BD54D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDEAF60724892026003BD54D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +45,25 @@
 		DDEAF60C24892026003BD54D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDEAF60F24892026003BD54D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDEAF61124892026003BD54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEAF622248922C2003BD54D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DDEAF62424892381003BD54D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DDEAF626248932AB003BD54D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		DDEAF6282489336B003BD54D /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		DDEAF62B24893A9F003BD54D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		DDEAF62F24893AE8003BD54D /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		DDEAF63224893B0A003BD54D /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		DDEAF63424893B37003BD54D /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		DDEAF63624893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+HasSuccessStatusCodel.swift"; sourceTree = "<group>"; };
+		DDEAF63924893BE7003BD54D /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		DDEAF63B24893C1E003BD54D /* DataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorker.swift; sourceTree = "<group>"; };
+		DDEAF63F24896EBD003BD54D /* PastelessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastelessTextField.swift; sourceTree = "<group>"; };
+		DDEAF642248B8431003BD54D /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		DDEAF645248B8486003BD54D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DDEAF647248B84EB003BD54D /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		DDEAF649248B8602003BD54D /* Showplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Showplace.swift; sourceTree = "<group>"; };
+		DDEAF64B248B94CA003BD54D /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		DDEAF64D248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+didTapAttributedTextInLabel.swift"; sourceTree = "<group>"; };
+		DDEAF653248BCE66003BD54D /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +71,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220BF455D67E817612C16394 /* Pods_Surprise_Me_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72E8DC2842096E64E8F3B101 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99A1570F246D4703737E18C9 /* Pods_Surprise_Me_Test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4ABC217ACE9DF940B97F9E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				031D0FA6CDCA776FCD8C60AD /* Pods-Surprise Me Test.debug.xcconfig */,
+				236EFB57D3AF28FC52DE8A0F /* Pods-Surprise Me Test.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DDEAF5F724892026003BD54D = {
 			isa = PBXGroup;
 			children = (
 				DDEAF60224892026003BD54D /* Surprise Me Test */,
 				DDEAF60124892026003BD54D /* Products */,
+				A4ABC217ACE9DF940B97F9E0 /* Pods */,
+				72E8DC2842096E64E8F3B101 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,8 +117,14 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF61724892044003BD54D /* AppDelegate */,
+				DDEAF63824893BDC003BD54D /* Constants */,
+				DDEAF621248922AB003BD54D /* Coordinators */,
+				DDEAF62A24893822003BD54D /* Extensions */,
+				DDEAF644248B845D003BD54D /* Models */,
 				DDEAF61924892074003BD54D /* Resources */,
+				DDEAF63124893B03003BD54D /* Utils */,
 				DDEAF61D24892099003BD54D /* View controllers */,
+				DDEAF641248B841D003BD54D /* View models */,
 				DDEAF61A24892081003BD54D /* Views */,
 			);
 			path = "Surprise Me Test";
@@ -82,6 +150,8 @@
 		DDEAF61A24892081003BD54D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DDEAF62E24893AD2003BD54D /* Custom views */,
+				DDEAF62D24893AC7003BD54D /* SignIn View Controller */,
 				DDEAF61B24892087003BD54D /* Storyboards */,
 			);
 			path = Views;
@@ -100,8 +170,83 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF60724892026003BD54D /* ViewController.swift */,
+				DDEAF626248932AB003BD54D /* SignInViewController.swift */,
 			);
 			path = "View controllers";
+			sourceTree = "<group>";
+		};
+		DDEAF621248922AB003BD54D /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF622248922C2003BD54D /* Coordinator.swift */,
+				DDEAF62424892381003BD54D /* MainCoordinator.swift */,
+				DDEAF6282489336B003BD54D /* SignInCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		DDEAF62A24893822003BD54D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF63624893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift */,
+				DDEAF64D248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DDEAF62D24893AC7003BD54D /* SignIn View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF62B24893A9F003BD54D /* SignInView.swift */,
+			);
+			path = "SignIn View Controller";
+			sourceTree = "<group>";
+		};
+		DDEAF62E24893AD2003BD54D /* Custom views */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF62F24893AE8003BD54D /* AsyncImageView.swift */,
+				DDEAF63F24896EBD003BD54D /* PastelessTextField.swift */,
+			);
+			path = "Custom views";
+			sourceTree = "<group>";
+		};
+		DDEAF63124893B03003BD54D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF63B24893C1E003BD54D /* DataWorker.swift */,
+				DDEAF63424893B37003BD54D /* DownloadManager.swift */,
+				DDEAF63224893B0A003BD54D /* ImageCache.swift */,
+				DDEAF64B248B94CA003BD54D /* URLBuilder.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DDEAF63824893BDC003BD54D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF63924893BE7003BD54D /* CustomError.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		DDEAF641248B841D003BD54D /* View models */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF642248B8431003BD54D /* SignInViewModel.swift */,
+			);
+			path = "View models";
+			sourceTree = "<group>";
+		};
+		DDEAF644248B845D003BD54D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF645248B8486003BD54D /* User.swift */,
+				DDEAF653248BCE66003BD54D /* PhoneNumber.swift */,
+				DDEAF647248B84EB003BD54D /* Tour.swift */,
+				DDEAF649248B8602003BD54D /* Showplace.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDEAF61424892026003BD54D /* Build configuration list for PBXNativeTarget "Surprise Me Test" */;
 			buildPhases = (
+				D6587CF2A46AA2A9FC975D15 /* [CP] Check Pods Manifest.lock */,
 				DDEAF5FC24892026003BD54D /* Sources */,
 				DDEAF5FD24892026003BD54D /* Frameworks */,
 				DDEAF5FE24892026003BD54D /* Resources */,
+				5EED4DA401D1EA143DF0B6FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,13 +317,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5EED4DA401D1EA143DF0B6FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Surprise Me Test/Pods-Surprise Me Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Surprise Me Test/Pods-Surprise Me Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Surprise Me Test/Pods-Surprise Me Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6587CF2A46AA2A9FC975D15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Surprise Me Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DDEAF5FC24892026003BD54D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDEAF64024896EBD003BD54D /* PastelessTextField.swift in Sources */,
+				DDEAF6292489336B003BD54D /* SignInCoordinator.swift in Sources */,
+				DDEAF63C24893C1E003BD54D /* DataWorker.swift in Sources */,
+				DDEAF63524893B37003BD54D /* DownloadManager.swift in Sources */,
+				DDEAF646248B8486003BD54D /* User.swift in Sources */,
+				DDEAF62C24893A9F003BD54D /* SignInView.swift in Sources */,
 				DDEAF60824892026003BD54D /* ViewController.swift in Sources */,
+				DDEAF63324893B0A003BD54D /* ImageCache.swift in Sources */,
+				DDEAF654248BCE66003BD54D /* PhoneNumber.swift in Sources */,
+				DDEAF63A24893BE7003BD54D /* CustomError.swift in Sources */,
+				DDEAF64C248B94CA003BD54D /* URLBuilder.swift in Sources */,
+				DDEAF64E248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift in Sources */,
+				DDEAF63724893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift in Sources */,
+				DDEAF63024893AE8003BD54D /* AsyncImageView.swift in Sources */,
 				DDEAF60424892026003BD54D /* AppDelegate.swift in Sources */,
+				DDEAF64A248B8602003BD54D /* Showplace.swift in Sources */,
+				DDEAF62524892381003BD54D /* MainCoordinator.swift in Sources */,
+				DDEAF648248B84EB003BD54D /* Tour.swift in Sources */,
+				DDEAF627248932AB003BD54D /* SignInViewController.swift in Sources */,
+				DDEAF623248922C2003BD54D /* Coordinator.swift in Sources */,
+				DDEAF643248B8431003BD54D /* SignInViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +526,7 @@
 		};
 		DDEAF61524892026003BD54D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 031D0FA6CDCA776FCD8C60AD /* Pods-Surprise Me Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -337,6 +546,7 @@
 		};
 		DDEAF61624892026003BD54D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 236EFB57D3AF28FC52DE8A0F /* Pods-Surprise Me Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

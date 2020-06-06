@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - Properties
+    
+    var coordinator: MainCoordinator?
+    
+    // MARK: - Actions
+    
+    @IBAction func signInButtonTapped(_ sender: UIButton) {
+        coordinator?.signIn()
+    }
+    
+    // MARK: - View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
 
 }
 
