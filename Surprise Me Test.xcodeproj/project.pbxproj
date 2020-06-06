@@ -32,6 +32,14 @@
 		DDEAF64C248B94CA003BD54D /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF64B248B94CA003BD54D /* URLBuilder.swift */; };
 		DDEAF64E248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF64D248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift */; };
 		DDEAF654248BCE66003BD54D /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF653248BCE66003BD54D /* PhoneNumber.swift */; };
+		DDEAF658248BE22B003BD54D /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF657248BE22B003BD54D /* CodeViewController.swift */; };
+		DDEAF65A248BEE28003BD54D /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF659248BEE28003BD54D /* URLRequestBuilder.swift */; };
+		DDEAF65C248BEE56003BD54D /* Dictionary+PercentEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF65B248BEE56003BD54D /* Dictionary+PercentEncoded.swift */; };
+		DDEAF65E248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF65D248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift */; };
+		DDEAF660248C00E8003BD54D /* ConstraintConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF65F248C00E8003BD54D /* ConstraintConstants.swift */; };
+		DDEAF662248C02DB003BD54D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF661248C02DB003BD54D /* CodeView.swift */; };
+		DDEAF664248C08B4003BD54D /* CodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF663248C08B4003BD54D /* CodeViewModel.swift */; };
+		DDEAF666248C1067003BD54D /* UIColor+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF665248C1067003BD54D /* UIColor+CustomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +72,14 @@
 		DDEAF64B248B94CA003BD54D /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		DDEAF64D248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+didTapAttributedTextInLabel.swift"; sourceTree = "<group>"; };
 		DDEAF653248BCE66003BD54D /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
+		DDEAF657248BE22B003BD54D /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		DDEAF659248BEE28003BD54D /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		DDEAF65B248BEE56003BD54D /* Dictionary+PercentEncoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+PercentEncoded.swift"; sourceTree = "<group>"; };
+		DDEAF65D248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+UrlQueryValueAllowed.swift"; sourceTree = "<group>"; };
+		DDEAF65F248C00E8003BD54D /* ConstraintConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintConstants.swift; sourceTree = "<group>"; };
+		DDEAF661248C02DB003BD54D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		DDEAF663248C08B4003BD54D /* CodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewModel.swift; sourceTree = "<group>"; };
+		DDEAF665248C1067003BD54D /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF62E24893AD2003BD54D /* Custom views */,
-				DDEAF62D24893AC7003BD54D /* SignIn View Controller */,
+				DDEAF62D24893AC7003BD54D /* View Controllers */,
 				DDEAF61B24892087003BD54D /* Storyboards */,
 			);
 			path = Views;
@@ -171,6 +187,7 @@
 			children = (
 				DDEAF60724892026003BD54D /* ViewController.swift */,
 				DDEAF626248932AB003BD54D /* SignInViewController.swift */,
+				DDEAF657248BE22B003BD54D /* CodeViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -190,16 +207,20 @@
 			children = (
 				DDEAF63624893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift */,
 				DDEAF64D248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift */,
+				DDEAF65B248BEE56003BD54D /* Dictionary+PercentEncoded.swift */,
+				DDEAF65D248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift */,
+				DDEAF665248C1067003BD54D /* UIColor+CustomColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		DDEAF62D24893AC7003BD54D /* SignIn View Controller */ = {
+		DDEAF62D24893AC7003BD54D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DDEAF62B24893A9F003BD54D /* SignInView.swift */,
+				DDEAF661248C02DB003BD54D /* CodeView.swift */,
 			);
-			path = "SignIn View Controller";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		DDEAF62E24893AD2003BD54D /* Custom views */ = {
@@ -218,6 +239,7 @@
 				DDEAF63424893B37003BD54D /* DownloadManager.swift */,
 				DDEAF63224893B0A003BD54D /* ImageCache.swift */,
 				DDEAF64B248B94CA003BD54D /* URLBuilder.swift */,
+				DDEAF659248BEE28003BD54D /* URLRequestBuilder.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -226,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF63924893BE7003BD54D /* CustomError.swift */,
+				DDEAF65F248C00E8003BD54D /* ConstraintConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -234,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF642248B8431003BD54D /* SignInViewModel.swift */,
+				DDEAF663248C08B4003BD54D /* CodeViewModel.swift */,
 			);
 			path = "View models";
 			sourceTree = "<group>";
@@ -370,14 +394,21 @@
 				DDEAF63524893B37003BD54D /* DownloadManager.swift in Sources */,
 				DDEAF646248B8486003BD54D /* User.swift in Sources */,
 				DDEAF62C24893A9F003BD54D /* SignInView.swift in Sources */,
+				DDEAF660248C00E8003BD54D /* ConstraintConstants.swift in Sources */,
+				DDEAF65E248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift in Sources */,
 				DDEAF60824892026003BD54D /* ViewController.swift in Sources */,
 				DDEAF63324893B0A003BD54D /* ImageCache.swift in Sources */,
 				DDEAF654248BCE66003BD54D /* PhoneNumber.swift in Sources */,
 				DDEAF63A24893BE7003BD54D /* CustomError.swift in Sources */,
 				DDEAF64C248B94CA003BD54D /* URLBuilder.swift in Sources */,
+				DDEAF666248C1067003BD54D /* UIColor+CustomColor.swift in Sources */,
 				DDEAF64E248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift in Sources */,
+				DDEAF65A248BEE28003BD54D /* URLRequestBuilder.swift in Sources */,
 				DDEAF63724893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift in Sources */,
+				DDEAF65C248BEE56003BD54D /* Dictionary+PercentEncoded.swift in Sources */,
+				DDEAF664248C08B4003BD54D /* CodeViewModel.swift in Sources */,
 				DDEAF63024893AE8003BD54D /* AsyncImageView.swift in Sources */,
+				DDEAF662248C02DB003BD54D /* CodeView.swift in Sources */,
 				DDEAF60424892026003BD54D /* AppDelegate.swift in Sources */,
 				DDEAF64A248B8602003BD54D /* Showplace.swift in Sources */,
 				DDEAF62524892381003BD54D /* MainCoordinator.swift in Sources */,
@@ -385,6 +416,7 @@
 				DDEAF627248932AB003BD54D /* SignInViewController.swift in Sources */,
 				DDEAF623248922C2003BD54D /* Coordinator.swift in Sources */,
 				DDEAF643248B8431003BD54D /* SignInViewModel.swift in Sources */,
+				DDEAF658248BE22B003BD54D /* CodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import Foundation
 
 struct SignInViewModel {
     
-    // MARK: - Private methods
+    // MARK: - Private properties
     
     private let user: User
     private let tour: Tour

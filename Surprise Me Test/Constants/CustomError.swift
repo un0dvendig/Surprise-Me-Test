@@ -11,6 +11,7 @@ import Foundation
 public enum CustomError: Error {
     case cannotBuildURL
     case cannotCreateUIImage
+    case cannotCreateString
     case errorWithText(String)
     case unknown
 }
@@ -22,6 +23,8 @@ extension CustomError: LocalizedError {
             return ErrorText.cannotBuildURL.rawValue
         case .cannotCreateUIImage:
             return ErrorText.cannotCreateUIImage.rawValue
+        case .cannotCreateString:
+            return ErrorText.cannotCreateString.rawValue
         case .unknown:
             return ErrorText.unknown.rawValue
         case .errorWithText(let text):
@@ -33,5 +36,6 @@ extension CustomError: LocalizedError {
 public enum ErrorText: String {
     case cannotBuildURL = "Cannot build an URL"
     case cannotCreateUIImage = "Cannot create an UIImage"
+    case cannotCreateString = "Cannot create a String"
     case unknown = "Unknown error"
 }

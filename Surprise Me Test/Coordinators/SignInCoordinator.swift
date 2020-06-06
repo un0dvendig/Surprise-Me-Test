@@ -47,19 +47,35 @@ class SignInCoordinator: Coordinator {
             self.didFinishChoosing(country: country)
         }
         countryPickerController.flagStyle = .circular
+        countryPickerController.title = "Country Code"
+        countryPickerController.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .bold)]
     }
     
     /// Show get code screen.
-    func getCode(for number: String) {
+    func getCode(for user: User) {
         guard let signInViewController = navigationController.presentedViewController as? SignInViewController else {
             return
         }
-//        let 
+
+        let viewController = CodeViewController()
+        viewController.coordinator = self
+        viewController.user = user
+        signInViewController.present(viewController, animated: true)
     }
     
     /// Handle successful sign in process.
     func didFinishSignIn() {
         parentCoordinator?.childDidFinish(self)
+    }
+    
+    /// Handle successful code check process.
+    func didFinishCheckingCode() {
+        /// Do whatever you please at this point.
+        /// As a placeholder just dismissing sign in view controller.
+        guard let signInViewController = navigationController.presentedViewController as? SignInViewController else {
+            return
+        }
+        signInViewController.dismiss(animated: true)
     }
     
     // MARK: - Private methods

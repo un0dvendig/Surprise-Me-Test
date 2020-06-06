@@ -45,5 +45,23 @@ class DownloadManager {
         }.resume()
     }
     
+    /// Downloads Data from the given URLRequest using completion.
+    func downloadData(from urlRequest: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+        session.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.hasSuccessStatusCode,
+                let data = data {
+                completion(.success(data))
+            } else {
+                let error = CustomError.errorWithText("Data or response error")
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+    
 }
 

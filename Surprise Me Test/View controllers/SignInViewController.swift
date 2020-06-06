@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
     
     // MARK: - Private properties
     
+    private var currentUser: User? // Potentially, should be obtained from some in-app storage.
     private var viewReference: SignInView?
     private var viewModel: SignInViewModel?
     
@@ -54,6 +55,7 @@ class SignInViewController: UIViewController {
     
     private func setupViewModel() {
         let user = User(id: 1, name: "Anitta", phone: nil, email: nil)
+        self.currentUser = user
         let tour = Tour(id: 11, name: "Fast-Track and Audio Tour")
         let showPlace = Showplace(id: 111, name: "Sagrada Familia", imageURLString: nil)
         
@@ -65,11 +67,11 @@ class SignInViewController: UIViewController {
         /// Potentially could be place for bindings.
         if let view = viewReference,
             let viewModel = viewModel {
-            view.configure(with: viewModel)
-            
             view.signInCountryButton.addTarget(self, action: #selector(chooseCounty), for: .touchUpInside)
             
             view.signInConfirmButton.addTarget(self, action: #selector(confirmAndGetCode), for: .touchUpInside)
+            
+            view.configure(with: viewModel)
         }
     }
     
@@ -84,17 +86,28 @@ class SignInViewController: UIViewController {
             return
         }
         
-        // TODO: Handle error
+        // TODO: Handle errors
         guard let countryCode = view.signInCountryCodeLabel.text,
             let phoneNumber = view.signInUserPhoneNumberTextField.text,
             !phoneNumber.isEmpty else {
-                print("Phone number is not valid!")
+                print("Phone number is emtpy!")
                 return
         }
         let clearPhoneNumber = phoneNumber.filter("0123456789".contains)
-        let fullPhoneNumber = countryCode+clearPhoneNumber
+        guard clearPhoneNumber.count == 10 else {
+            print("Phone number is not complete!")
+            return
+        }
         
-        coordinator?.getCode(for: fullPhoneNumber)
+        
+        guard var user = self.currentUser else {
+            fatalError("There is no current user!")
+        }
+        /// Potentially, place to save info about the user.
+        user.phone = PhoneNumber(countryCode: countryCode, phoneNumber: clearPhoneNumber)
+        self.currentUser = user
+        
+        coordinator?.getCode(for: user)
     }
 
 }

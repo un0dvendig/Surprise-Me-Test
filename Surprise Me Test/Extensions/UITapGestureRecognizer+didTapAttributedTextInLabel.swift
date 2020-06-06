@@ -10,6 +10,7 @@ import UIKit
 
 extension UITapGestureRecognizer {
 
+    /// Returns a Bollean, that whows if text in given range was tapped inside given label.
     func didTapAttributedTextInLabel(label: UILabel, inRange targetRange: NSRange) -> Bool {
         // Create instances of NSLayoutManager, NSTextContainer and NSTextStorage
         let layoutManager = NSLayoutManager()

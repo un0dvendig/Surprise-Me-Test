@@ -21,10 +21,16 @@ class DataWorker {
     
     // MARK: - Methods
     
-    /// Tries to convert given Data to UIImage. Returns optional UIImage.
+    /// Convert given Data to UIImage. Returns optional UIImage.
     func convertDataToUIImage(_ data: Data) -> UIImage? {
         let image = UIImage(data: data)
         return image
+    }
+    
+    /// Convert given Data to String. Returns optional String.
+    func convertDataToString(_ data: Data) -> String? {
+        let string = String(data: data, encoding: .utf8)
+        return string
     }
     
 }

@@ -10,28 +10,30 @@ import UIKit
 import SKCountryPicker
 
 class SignInView: UIView {
-
-    // MARK: - Constaints
-    
-    // TODO: Move constants somewhere else
-    let CONTENTCORENRRADIUS: CGFloat = 30
-    let DRAGVIEWHEIGHT: CGFloat = 4
-    let DRAGVIEWWIDTH: CGFloat = 50
     
     // MARK: - Subviews
     
     lazy var signInFakeDragView: UIView = {
         let view = UIView()
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.layer.cornerRadius = DRAGVIEWHEIGHT / 2
         return view
     }()
     
     lazy var signInContentView: UIView = {
         let view = UIView()
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        view.layer.cornerRadius = CONTENTCORENRRADIUS
         return view
     }()
     
     lazy var signInShowplaceImageView: AsyncImageView = {
         let imageView = AsyncImageView()
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -46,63 +48,85 @@ class SignInView: UIView {
     
     lazy var signInShowplaceNameLabel: UILabel = {
         let label = UILabel()
+        label.text = "Some Showplace:"
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 1
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .largeTitle)
+        label.font = .systemFont(ofSize: 30, weight: .bold)
         label.textColor = .black
         return label
     }()
     
     lazy var signInTourNameLabel: UILabel = {
         let label = UILabel()
+        label.text = "Some Tour"
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 1
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .largeTitle)
+        label.font = .systemFont(ofSize: 30, weight: .bold)
         label.textColor = .black
         return label
     }()
     
     lazy var signInUserNameLabel: UILabel = {
         let label = UILabel()
+        label.text = "Hi, NONAME!"
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 1
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .largeTitle)
-        label.textColor = .blue
+        label.font = .systemFont(ofSize: 30, weight: .bold)
+        label.textColor = UIColor.CustomColor.customBlue
         return label
     }()
     
     lazy var signInInfoLabel: UILabel = {
         let label = UILabel()
+                label.text = "Sign in to have an easier access to your tours and tickets. No password needed - we'll send you authorization code 😼"
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 18)
         label.textColor = .black
         return label
     }()
     
     lazy var signInCountryButton: UIButton = {
         let button = UIButton(type: .system)
+        if let country = CountryManager.shared.country(withDigitCode: "+1") {
+            button.setImage(country.flag?.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        
+        button.clipsToBounds = true
+        button.layer.masksToBounds = false
+        button.layer.shadowRadius = 5
+        button.layer.shadowOpacity = 0.8
+        button.layer.shadowOffset = CGSize(width: 3, height: 3)
+        button.layer.shadowColor = UIColor.gray.cgColor
         return button
     }()
     
     lazy var signInCountryCodeLabel: UILabel = {
         let label = UILabel()
+        label.text = "+1"
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 1
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .title2)
+        label.font = .systemFont(ofSize: 30, weight: .regular)
         label.textColor = .black
         return label
     }()
     
     lazy var signInUserPhoneNumberTextField: PastelessTextField = {
         let textField = PastelessTextField()
+        textField.backgroundColor = .white
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.lightGray
+        ]
+        let attributedPlaceholder = NSAttributedString(string: "(720) 505-50-00", attributes: attributes)
+        textField.attributedPlaceholder = attributedPlaceholder
+        textField.delegate = self
         textField.textAlignment = .center
-        textField.font = .preferredFont(forTextStyle: .title2)
+        textField.font = .systemFont(ofSize: 30, weight: .regular)
         textField.textColor = .black
         textField.keyboardType = .numberPad
         return textField
@@ -110,16 +134,35 @@ class SignInView: UIView {
     
     lazy var signInConfirmButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .blue
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 18),
+            .foregroundColor: UIColor.white
+        ]
+        let attributedtitle = NSAttributedString(string: "Confirm and get code", attributes: attributes)
+        button.setAttributedTitle(attributedtitle, for: .normal)
+        
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10
+        button.backgroundColor = UIColor.CustomColor.customBlue
         return button
     }()
     
     lazy var signInNotYouLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .black
+        let asAnotherPersonText = "Sign in as another peron"
+        
+        let fullText = "Not you? \(asAnotherPersonText)"
+        label.text = fullText
+        let anotherPersonText = NSMutableAttributedString(string: fullText)
+        let anotherPersonTextRange = (fullText as NSString).range(of: asAnotherPersonText)
+        anotherPersonText.addAttribute(NSMutableAttributedString.Key.foregroundColor, value: UIColor.CustomColor.customBlue, range: anotherPersonTextRange)
+        label.attributedText = anotherPersonText
+        label.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleAsAnotherUser(_:)))
+        label.addGestureRecognizer(tap)
         label.numberOfLines = 1
         label.textAlignment = .center
-        label.textColor = .black
         return label
     }()
     
@@ -276,10 +319,6 @@ class SignInView: UIView {
     }
     
     private func setupFakeDragView() {
-        signInFakeDragView.backgroundColor = .white
-        signInFakeDragView.clipsToBounds = true
-        signInFakeDragView.layer.cornerRadius = DRAGVIEWHEIGHT / 2
-        
         signInFakeDragView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInFakeDragView.heightAnchor.constraint(equalToConstant: DRAGVIEWHEIGHT),
@@ -290,11 +329,6 @@ class SignInView: UIView {
     }
     
     private func setupContentView() {
-        signInContentView.backgroundColor = .white
-        signInContentView.clipsToBounds = true
-        signInContentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        signInContentView.layer.cornerRadius = CONTENTCORENRRADIUS
-        
         signInContentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInContentView.topAnchor.constraint(equalTo: signInFakeDragView.bottomAnchor, constant: 10),
@@ -305,9 +339,6 @@ class SignInView: UIView {
     }
     
     private func setupShowplaceImageView() {
-        signInShowplaceImageView.clipsToBounds = true
-        signInShowplaceImageView.layer.cornerRadius = 10
-        
         signInShowplaceImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInShowplaceImageView.topAnchor.constraint(equalTo: signInContentView.topAnchor, constant: CONTENTCORENRRADIUS),
@@ -326,8 +357,6 @@ class SignInView: UIView {
     }
     
     private func setupShowplaceNameLabel() {
-        signInShowplaceNameLabel.text = "Some Showplace:"
-        
         signInShowplaceNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInShowplaceNameLabel.topAnchor.constraint(equalTo: signInShowplaceImageView.bottomAnchor, constant: 20),
@@ -338,8 +367,6 @@ class SignInView: UIView {
     }
     
     private func setupTourNameLabel() {
-        signInTourNameLabel.text = "Some Tour"
-        
         signInTourNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInTourNameLabel.topAnchor.constraint(equalTo: signInShowplaceNameLabel.bottomAnchor, constant: 5),
@@ -350,8 +377,6 @@ class SignInView: UIView {
     }
     
     private func setupUserNameLabel() {
-        signInUserNameLabel.text = "Hi, NONAME!"
-        
         signInUserNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInUserNameLabel.topAnchor.constraint(equalTo: signInTourNameLabel.bottomAnchor, constant: 20),
@@ -362,8 +387,6 @@ class SignInView: UIView {
     }
     
     private func setupInfoLabel() {
-        signInInfoLabel.text = "Sign in to have an easier access to your tours and tickets. No password needed - we'll send you autorization code 😼"
-        
         signInInfoLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInInfoLabel.topAnchor.constraint(equalTo: signInUserNameLabel.bottomAnchor, constant: 10),
@@ -375,17 +398,6 @@ class SignInView: UIView {
     }
     
     private func setupCountryButton() {
-        if let country = CountryManager.shared.country(withDigitCode: "+1") {
-            signInCountryButton.setImage(country.flag?.withRenderingMode(.alwaysOriginal), for: .normal)
-        }
-        
-        signInCountryButton.clipsToBounds = true
-        signInCountryButton.layer.masksToBounds = false
-        signInCountryButton.layer.shadowRadius = 5
-        signInCountryButton.layer.shadowOpacity = 0.8
-        signInCountryButton.layer.shadowOffset = CGSize(width: 3, height: 3)
-        signInCountryButton.layer.shadowColor = UIColor.gray.cgColor
-        
         signInCountryButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInCountryButton.leadingAnchor.constraint(equalTo: signInContentView.leadingAnchor, constant: CONTENTCORENRRADIUS / 2),
@@ -399,8 +411,6 @@ class SignInView: UIView {
     }
     
     private func setupCountryCodeLabel() {
-        signInCountryCodeLabel.text = "+1"
-        
         signInCountryCodeLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInCountryCodeLabel.topAnchor.constraint(equalTo: signInInfoLabel.bottomAnchor, constant: 5),
@@ -411,14 +421,6 @@ class SignInView: UIView {
     }
     
     private func setupUserPhoneNumberTextField() {
-        signInUserPhoneNumberTextField.backgroundColor = .white
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.lightGray
-        ]
-        let attributedPlaceholder = NSAttributedString(string: "(720) 505-50-00", attributes: attributes)
-        signInUserPhoneNumberTextField.attributedPlaceholder = attributedPlaceholder
-        signInUserPhoneNumberTextField.delegate = self
-        
         signInUserPhoneNumberTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInUserPhoneNumberTextField.leadingAnchor.constraint(equalTo: signInCountryCodeLabel.trailingAnchor, constant: 20),
@@ -428,10 +430,6 @@ class SignInView: UIView {
     }
     
     private func setupConfirmButton() {
-        signInConfirmButton.setTitle("Confirm and get code", for: .normal)
-        signInConfirmButton.clipsToBounds = true
-        signInConfirmButton.layer.cornerRadius = 10
-        
         signInConfirmButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInConfirmButton.topAnchor.constraint(equalTo: signInCountryCodeLabel.bottomAnchor, constant: 5),
@@ -442,18 +440,6 @@ class SignInView: UIView {
     }
     
     private func setupNotYouLabel() {
-        let asAnotherPersonText = "Sign in as another peron"
-        
-        let fullText = "Not you? \(asAnotherPersonText)"
-        signInNotYouLabel.text = fullText
-        let anotherPersonText = NSMutableAttributedString(string: fullText)
-        let anotherPersonTextRange = (fullText as NSString).range(of: asAnotherPersonText)
-        anotherPersonText.addAttribute(NSMutableAttributedString.Key.foregroundColor, value: UIColor.blue, range: anotherPersonTextRange)
-        signInNotYouLabel.attributedText = anotherPersonText
-        signInNotYouLabel.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(test(_:)))
-        signInNotYouLabel.addGestureRecognizer(tap)
-
         signInNotYouLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInNotYouLabel.topAnchor.constraint(equalTo: signInConfirmButton.bottomAnchor, constant: 20),
@@ -464,7 +450,7 @@ class SignInView: UIView {
     
     
     @objc
-    private func test(_ tap: UITapGestureRecognizer) {
+    private func handleAsAnotherUser(_ tap: UITapGestureRecognizer) {
         guard let text = signInNotYouLabel.text else {
                 return
         }
@@ -527,6 +513,8 @@ extension SignInView: UITextFieldDelegate {
 /// and
 /// https://stackoverflow.com/questions/1246439/uitextfield-for-phone-number/13227608#13227608
 
+    // MARK: - Methods
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         var fullString = textField.text ?? ""
