@@ -115,7 +115,7 @@ class SignInView: UIView {
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 1
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 30, weight: .regular)
+        label.font = .systemFont(ofSize: 25, weight: .regular)
         label.textColor = .black
         return label
     }()
@@ -130,7 +130,7 @@ class SignInView: UIView {
         textField.attributedPlaceholder = attributedPlaceholder
         textField.delegate = self
         textField.textAlignment = .center
-        textField.font = .systemFont(ofSize: 30, weight: .regular)
+        textField.font = .systemFont(ofSize: 25, weight: .regular)
         textField.textColor = .black
         textField.keyboardType = .numberPad
         return textField
@@ -338,7 +338,7 @@ class SignInView: UIView {
             signInContentView.topAnchor.constraint(equalTo: signInFakeDragView.bottomAnchor, constant: 10),
             signInContentView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             signInContentView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            signInContentView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+            signInContentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     
@@ -374,7 +374,9 @@ class SignInView: UIView {
         signInTourNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInTourNameLabel.topAnchor.constraint(equalTo: signInShowplaceNameLabel.bottomAnchor, constant: 5),
-            signInTourNameLabel.centerXAnchor.constraint(equalTo: signInContentView.centerXAnchor)
+            signInTourNameLabel.centerXAnchor.constraint(equalTo: signInContentView.centerXAnchor),
+            signInTourNameLabel.leadingAnchor.constraint(equalTo: signInContentView.leadingAnchor),
+            signInTourNameLabel.trailingAnchor.constraint(equalTo: signInContentView.trailingAnchor)
         ])
         
         signInTourNameLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
@@ -398,7 +400,7 @@ class SignInView: UIView {
             signInInfoLabel.trailingAnchor.constraint(equalTo: signInContentView.trailingAnchor, constant: -CONTENTCORENRRADIUS / 2)
         ])
         
-        signInInfoLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
+//        signInInfoLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
     }
     
     private func setupCountryButton() {
@@ -448,7 +450,7 @@ class SignInView: UIView {
         NSLayoutConstraint.activate([
             signInNotYouLabel.topAnchor.constraint(equalTo: signInConfirmButton.bottomAnchor, constant: 20),
             signInNotYouLabel.centerXAnchor.constraint(equalTo: signInContentView.centerXAnchor),
-            signInNotYouLabel.bottomAnchor.constraint(equalTo: signInContentView.bottomAnchor, constant: -20)
+            signInNotYouLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
     
@@ -465,7 +467,6 @@ class SignInView: UIView {
         }
     }
 
-    
     /// Returns a new String with phone format: `(***) ***-**-**`.
     private func format(phoneNumber: String, shouldRemoveLastDigit: Bool = false, skipTextFieldHandle: Bool = false) -> String {
         guard !phoneNumber.isEmpty else { return "" }

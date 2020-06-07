@@ -17,8 +17,10 @@ class SignInViewController: UIViewController {
     
     // MARK: - Private properties
     
+    private var viewTranslation = CGPoint(x: 0, y: 0) /// Property for iOS < 13.0
+    
     private var alerHandler: AlertHandler?
-    private var currentUser: User? // Potentially, should be obtained from some in-app storage.
+    private var currentUser: User? /// Potentially, should be obtained from some in-app storage.
     private var viewReference: SignInView?
     private var viewModel: SignInViewModel?
     
@@ -39,7 +41,10 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if #available(iOS 13.0, *) {
+        } else {
+            setupPanGesture()
+        }
         setupViewModel()
         setupView()
     }
@@ -116,6 +121,33 @@ class SignInViewController: UIViewController {
         self.currentUser = user
         
         coordinator?.getCode(for: user)
+    }
+    
+    /// Mimics drag to dismiss
+    private func setupPanGesture() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        self.view.addGestureRecognizer(panGesture)
+    }
+    
+    @objc
+    private func handlePan(_ pan: UIPanGestureRecognizer) {
+        guard pan.translation(in: self.view).y > 0 else {
+            return
+        }
+        switch pan.state {
+        case .changed:
+            viewTranslation = pan.translation(in: self.view)
+            self.view.frame.origin.y = viewTranslation.y
+        case .ended:
+            if viewTranslation.y < 200 {
+                self.view.frame.origin.y = 0
+            } else {
+                dismiss(animated: true)
+            }
+        default:
+            break
+            
+        }
     }
 
 }

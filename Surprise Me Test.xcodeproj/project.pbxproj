@@ -42,10 +42,18 @@
 		DDEAF668248C1FAC003BD54D /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF667248C1FAC003BD54D /* AlertHandler.swift */; };
 		DDEAF670248CCB31003BD54D /* Surprise_Me_Test_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF66F248CCB31003BD54D /* Surprise_Me_Test_Tests.swift */; };
 		DDEAF678248CE425003BD54D /* PhoneNumber+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF677248CE425003BD54D /* PhoneNumber+Equatable.swift */; };
+		DDEAF680248CEAC5003BD54D /* Surprise_Me_Test_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF67F248CEAC5003BD54D /* Surprise_Me_Test_UITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DDEAF672248CCB31003BD54D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDEAF5F824892026003BD54D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDEAF5FF24892026003BD54D;
+			remoteInfo = "Surprise Me Test";
+		};
+		DDEAF682248CEAC5003BD54D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DDEAF5F824892026003BD54D /* Project object */;
 			proxyType = 1;
@@ -96,6 +104,9 @@
 		DDEAF66F248CCB31003BD54D /* Surprise_Me_Test_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surprise_Me_Test_Tests.swift; sourceTree = "<group>"; };
 		DDEAF671248CCB31003BD54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDEAF677248CE425003BD54D /* PhoneNumber+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhoneNumber+Equatable.swift"; sourceTree = "<group>"; };
+		DDEAF67D248CEAC5003BD54D /* Surprise Me Test UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Surprise Me Test UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDEAF67F248CEAC5003BD54D /* Surprise_Me_Test_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surprise_Me_Test_UITests.swift; sourceTree = "<group>"; };
+		DDEAF681248CEAC5003BD54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +119,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DDEAF66A248CCB31003BD54D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEAF67A248CEAC5003BD54D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,6 +157,7 @@
 			children = (
 				DDEAF60224892026003BD54D /* Surprise Me Test */,
 				DDEAF66E248CCB31003BD54D /* Surprise Me Test Tests */,
+				DDEAF67E248CEAC5003BD54D /* Surprise Me Test UITests */,
 				DDEAF60124892026003BD54D /* Products */,
 				A4ABC217ACE9DF940B97F9E0 /* Pods */,
 				72E8DC2842096E64E8F3B101 /* Frameworks */,
@@ -150,6 +169,7 @@
 			children = (
 				DDEAF60024892026003BD54D /* Surprise Me Test.app */,
 				DDEAF66D248CCB31003BD54D /* Surprise Me Test Tests.xctest */,
+				DDEAF67D248CEAC5003BD54D /* Surprise Me Test UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,6 +328,15 @@
 			path = "Surprise Me Test Tests";
 			sourceTree = "<group>";
 		};
+		DDEAF67E248CEAC5003BD54D /* Surprise Me Test UITests */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF67F248CEAC5003BD54D /* Surprise_Me_Test_UITests.swift */,
+				DDEAF681248CEAC5003BD54D /* Info.plist */,
+			);
+			path = "Surprise Me Test UITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,6 +377,24 @@
 			productReference = DDEAF66D248CCB31003BD54D /* Surprise Me Test Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DDEAF67C248CEAC5003BD54D /* Surprise Me Test UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDEAF684248CEAC5003BD54D /* Build configuration list for PBXNativeTarget "Surprise Me Test UITests" */;
+			buildPhases = (
+				DDEAF679248CEAC5003BD54D /* Sources */,
+				DDEAF67A248CEAC5003BD54D /* Frameworks */,
+				DDEAF67B248CEAC5003BD54D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDEAF683248CEAC5003BD54D /* PBXTargetDependency */,
+			);
+			name = "Surprise Me Test UITests";
+			productName = "Surprise Me Test UITests";
+			productReference = DDEAF67D248CEAC5003BD54D /* Surprise Me Test UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -362,6 +409,10 @@
 						CreatedOnToolsVersion = 11.5;
 					};
 					DDEAF66C248CCB31003BD54D = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = DDEAF5FF24892026003BD54D;
+					};
+					DDEAF67C248CEAC5003BD54D = {
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = DDEAF5FF24892026003BD54D;
 					};
@@ -382,6 +433,7 @@
 			targets = (
 				DDEAF5FF24892026003BD54D /* Surprise Me Test */,
 				DDEAF66C248CCB31003BD54D /* Surprise Me Test Tests */,
+				DDEAF67C248CEAC5003BD54D /* Surprise Me Test UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -398,6 +450,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DDEAF66B248CCB31003BD54D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEAF67B248CEAC5003BD54D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -494,6 +553,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDEAF679248CEAC5003BD54D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDEAF680248CEAC5003BD54D /* Surprise_Me_Test_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -501,6 +568,11 @@
 			isa = PBXTargetDependency;
 			target = DDEAF5FF24892026003BD54D /* Surprise Me Test */;
 			targetProxy = DDEAF672248CCB31003BD54D /* PBXContainerItemProxy */;
+		};
+		DDEAF683248CEAC5003BD54D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDEAF5FF24892026003BD54D /* Surprise Me Test */;
+			targetProxy = DDEAF682248CEAC5003BD54D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -720,6 +792,46 @@
 			};
 			name = Release;
 		};
+		DDEAF685248CEAC5003BD54D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZTJ8W8QRE;
+				INFOPLIST_FILE = "Surprise Me Test UITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "un0dvend1g.Surprise-Me-Test-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Surprise Me Test";
+			};
+			name = Debug;
+		};
+		DDEAF686248CEAC5003BD54D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZTJ8W8QRE;
+				INFOPLIST_FILE = "Surprise Me Test UITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "un0dvend1g.Surprise-Me-Test-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Surprise Me Test";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -746,6 +858,15 @@
 			buildConfigurations = (
 				DDEAF675248CCB31003BD54D /* Debug */,
 				DDEAF676248CCB31003BD54D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDEAF684248CEAC5003BD54D /* Build configuration list for PBXNativeTarget "Surprise Me Test UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDEAF685248CEAC5003BD54D /* Debug */,
+				DDEAF686248CEAC5003BD54D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

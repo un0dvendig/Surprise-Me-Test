@@ -18,6 +18,9 @@ class CodeViewController: UIViewController {
     
     // MARK: - Private properties
     
+    private var defaultFrameOriginY = CGFloat(0) /// Property for iOS < 13.0
+    private var viewTranslation = CGPoint(x: 0, y: 0) /// Property for iOS < 13.0
+    
     private var alertHandler: AlertHandler?
     private var viewReference: CodeView?
     private var viewModel: CodeViewModel?
@@ -43,6 +46,11 @@ class CodeViewController: UIViewController {
         setupViewModel()
         setupView()
         postCodeRequest()
+        
+        if #available(iOS 13.0, *) {
+        } else {
+            setupPanGesture()
+        }
     }
 
     // MARK: - Private methods
@@ -64,7 +72,19 @@ class CodeViewController: UIViewController {
             view.codeSendAgainLabel.addGestureRecognizer(tap)
             
             view.configure(with: viewModel)
-            _ = view.codeEntryKAPinField.becomeFirstResponder()
+            
+            /// Huge UI workaround for devices with iOS version lower than 13.0.
+            /// For some reason these devices need time to handle this properly
+            if #available(iOS 13.0, *) {
+                _ = view.codeEntryKAPinField.becomeFirstResponder()
+            } else {
+                DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime.now() + 0.05) {
+                    DispatchQueue.main.async {
+                        _ = view.codeEntryKAPinField.becomeFirstResponder()
+                        self.defaultFrameOriginY = view.frame.origin.y
+                    }
+                }
+            }
         }
     }
     
@@ -136,6 +156,32 @@ class CodeViewController: UIViewController {
             case .failure(let error):
                 completion(.failure(error))
             }
+        }
+    }
+    
+    private func setupPanGesture() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        self.view.addGestureRecognizer(panGesture)
+    }
+    
+    @objc
+    private func handlePan(_ pan: UIPanGestureRecognizer) {
+        guard pan.translation(in: self.view).y > 0 else {
+            return
+        }
+        switch pan.state {
+        case .changed:
+            viewTranslation = pan.translation(in: self.view)
+            self.view.frame.origin.y = viewTranslation.y + defaultFrameOriginY
+        case .ended:
+            if viewTranslation.y < 200 {
+                self.view.frame.origin.y = defaultFrameOriginY
+            } else {
+                dismiss(animated: true)
+            }
+        default:
+            break
+            
         }
     }
 

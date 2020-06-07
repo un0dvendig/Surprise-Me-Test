@@ -200,7 +200,7 @@ class CodeView: UIView {
             codeContentView.topAnchor.constraint(equalTo: codeFakeDragView.bottomAnchor, constant: 10),
             codeContentView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             codeContentView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            codeContentView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            codeContentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             codeContentView.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5)
         ])
     }
@@ -244,7 +244,7 @@ class CodeView: UIView {
         codeSendAgainLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             codeSendAgainLabel.centerXAnchor.constraint(equalTo: codeContentView.centerXAnchor),
-            codeSendAgainLabel.bottomAnchor.constraint(equalTo: codeContentView.bottomAnchor, constant: -20)
+            codeSendAgainLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
 

@@ -30,6 +30,11 @@ class SignInCoordinator: Coordinator {
         
         let viewController = SignInViewController()
         viewController.coordinator = self
+        if #available(iOS 13.0, *) {
+        } else {
+            /// Removes black background
+            viewController.modalPresentationStyle = .overCurrentContext
+        }
         navigationController.present(viewController, animated: true)
     }
     
@@ -46,6 +51,7 @@ class SignInCoordinator: Coordinator {
             
             self.didFinishChoosing(country: country)
         }
+        CountryManager.shared.addFilter(.countryDialCode)
         countryPickerController.flagStyle = .circular
         countryPickerController.title = "Country Code"
         countryPickerController.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .bold)]
