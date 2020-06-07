@@ -13,8 +13,8 @@ extension Dictionary{
     /// Method that helps to encode parameters properly.
     func percentEncoded() -> Data? {
         return map { (key, value) in
-            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
-            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
+            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
             return escapedKey + "=" + escapedValue
         }
         .joined(separator: "&")

@@ -35,13 +35,24 @@
 		DDEAF658248BE22B003BD54D /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF657248BE22B003BD54D /* CodeViewController.swift */; };
 		DDEAF65A248BEE28003BD54D /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF659248BEE28003BD54D /* URLRequestBuilder.swift */; };
 		DDEAF65C248BEE56003BD54D /* Dictionary+PercentEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF65B248BEE56003BD54D /* Dictionary+PercentEncoded.swift */; };
-		DDEAF65E248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF65D248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift */; };
 		DDEAF660248C00E8003BD54D /* ConstraintConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF65F248C00E8003BD54D /* ConstraintConstants.swift */; };
 		DDEAF662248C02DB003BD54D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF661248C02DB003BD54D /* CodeView.swift */; };
 		DDEAF664248C08B4003BD54D /* CodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF663248C08B4003BD54D /* CodeViewModel.swift */; };
 		DDEAF666248C1067003BD54D /* UIColor+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF665248C1067003BD54D /* UIColor+CustomColor.swift */; };
 		DDEAF668248C1FAC003BD54D /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF667248C1FAC003BD54D /* AlertHandler.swift */; };
+		DDEAF670248CCB31003BD54D /* Surprise_Me_Test_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF66F248CCB31003BD54D /* Surprise_Me_Test_Tests.swift */; };
+		DDEAF678248CE425003BD54D /* PhoneNumber+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF677248CE425003BD54D /* PhoneNumber+Equatable.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDEAF672248CCB31003BD54D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDEAF5F824892026003BD54D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDEAF5FF24892026003BD54D;
+			remoteInfo = "Surprise Me Test";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		031D0FA6CDCA776FCD8C60AD /* Pods-Surprise Me Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise Me Test.debug.xcconfig"; path = "Target Support Files/Pods-Surprise Me Test/Pods-Surprise Me Test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,12 +87,15 @@
 		DDEAF657248BE22B003BD54D /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		DDEAF659248BEE28003BD54D /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		DDEAF65B248BEE56003BD54D /* Dictionary+PercentEncoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+PercentEncoded.swift"; sourceTree = "<group>"; };
-		DDEAF65D248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+UrlQueryValueAllowed.swift"; sourceTree = "<group>"; };
 		DDEAF65F248C00E8003BD54D /* ConstraintConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintConstants.swift; sourceTree = "<group>"; };
 		DDEAF661248C02DB003BD54D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		DDEAF663248C08B4003BD54D /* CodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewModel.swift; sourceTree = "<group>"; };
 		DDEAF665248C1067003BD54D /* UIColor+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColor.swift"; sourceTree = "<group>"; };
 		DDEAF667248C1FAC003BD54D /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		DDEAF66D248CCB31003BD54D /* Surprise Me Test Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Surprise Me Test Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDEAF66F248CCB31003BD54D /* Surprise_Me_Test_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surprise_Me_Test_Tests.swift; sourceTree = "<group>"; };
+		DDEAF671248CCB31003BD54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEAF677248CE425003BD54D /* PhoneNumber+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhoneNumber+Equatable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +104,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				220BF455D67E817612C16394 /* Pods_Surprise_Me_Test.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEAF66A248CCB31003BD54D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF60224892026003BD54D /* Surprise Me Test */,
+				DDEAF66E248CCB31003BD54D /* Surprise Me Test Tests */,
 				DDEAF60124892026003BD54D /* Products */,
 				A4ABC217ACE9DF940B97F9E0 /* Pods */,
 				72E8DC2842096E64E8F3B101 /* Frameworks */,
@@ -127,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF60024892026003BD54D /* Surprise Me Test.app */,
+				DDEAF66D248CCB31003BD54D /* Surprise Me Test Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,7 +233,6 @@
 				DDEAF63624893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift */,
 				DDEAF64D248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift */,
 				DDEAF65B248BEE56003BD54D /* Dictionary+PercentEncoded.swift */,
-				DDEAF65D248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift */,
 				DDEAF665248C1067003BD54D /* UIColor+CustomColor.swift */,
 			);
 			path = Extensions;
@@ -276,6 +298,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DDEAF66E248CCB31003BD54D /* Surprise Me Test Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DDEAF66F248CCB31003BD54D /* Surprise_Me_Test_Tests.swift */,
+				DDEAF671248CCB31003BD54D /* Info.plist */,
+				DDEAF677248CE425003BD54D /* PhoneNumber+Equatable.swift */,
+			);
+			path = "Surprise Me Test Tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,6 +330,24 @@
 			productReference = DDEAF60024892026003BD54D /* Surprise Me Test.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DDEAF66C248CCB31003BD54D /* Surprise Me Test Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDEAF674248CCB31003BD54D /* Build configuration list for PBXNativeTarget "Surprise Me Test Tests" */;
+			buildPhases = (
+				DDEAF669248CCB31003BD54D /* Sources */,
+				DDEAF66A248CCB31003BD54D /* Frameworks */,
+				DDEAF66B248CCB31003BD54D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDEAF673248CCB31003BD54D /* PBXTargetDependency */,
+			);
+			name = "Surprise Me Test Tests";
+			productName = "Surprise Me Test Tests";
+			productReference = DDEAF66D248CCB31003BD54D /* Surprise Me Test Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -310,6 +360,10 @@
 				TargetAttributes = {
 					DDEAF5FF24892026003BD54D = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					DDEAF66C248CCB31003BD54D = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = DDEAF5FF24892026003BD54D;
 					};
 				};
 			};
@@ -327,6 +381,7 @@
 			projectRoot = "";
 			targets = (
 				DDEAF5FF24892026003BD54D /* Surprise Me Test */,
+				DDEAF66C248CCB31003BD54D /* Surprise Me Test Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,6 +394,13 @@
 				DDEAF61024892026003BD54D /* LaunchScreen.storyboard in Resources */,
 				DDEAF60D24892026003BD54D /* Assets.xcassets in Resources */,
 				DDEAF60B24892026003BD54D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEAF66B248CCB31003BD54D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +460,6 @@
 				DDEAF646248B8486003BD54D /* User.swift in Sources */,
 				DDEAF62C24893A9F003BD54D /* SignInView.swift in Sources */,
 				DDEAF660248C00E8003BD54D /* ConstraintConstants.swift in Sources */,
-				DDEAF65E248BEEB7003BD54D /* CharacterSet+UrlQueryValueAllowed.swift in Sources */,
 				DDEAF60824892026003BD54D /* ViewController.swift in Sources */,
 				DDEAF63324893B0A003BD54D /* ImageCache.swift in Sources */,
 				DDEAF654248BCE66003BD54D /* PhoneNumber.swift in Sources */,
@@ -424,7 +485,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDEAF669248CCB31003BD54D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDEAF678248CE425003BD54D /* PhoneNumber+Equatable.swift in Sources */,
+				DDEAF670248CCB31003BD54D /* Surprise_Me_Test_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDEAF673248CCB31003BD54D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDEAF5FF24892026003BD54D /* Surprise Me Test */;
+			targetProxy = DDEAF672248CCB31003BD54D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DDEAF60924892026003BD54D /* Main.storyboard */ = {
@@ -600,6 +678,48 @@
 			};
 			name = Release;
 		};
+		DDEAF675248CCB31003BD54D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZTJ8W8QRE;
+				INFOPLIST_FILE = "Surprise Me Test Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "un0dvend1g.Surprise-Me-Test-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Surprise Me Test.app/Surprise Me Test";
+			};
+			name = Debug;
+		};
+		DDEAF676248CCB31003BD54D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZTJ8W8QRE;
+				INFOPLIST_FILE = "Surprise Me Test Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "un0dvend1g.Surprise-Me-Test-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Surprise Me Test.app/Surprise Me Test";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -617,6 +737,15 @@
 			buildConfigurations = (
 				DDEAF61524892026003BD54D /* Debug */,
 				DDEAF61624892026003BD54D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDEAF674248CCB31003BD54D /* Build configuration list for PBXNativeTarget "Surprise Me Test Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDEAF675248CCB31003BD54D /* Debug */,
+				DDEAF676248CCB31003BD54D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
