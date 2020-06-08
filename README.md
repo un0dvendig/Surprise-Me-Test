@@ -38,6 +38,9 @@ Test task for Suprise Me
  2. Run `pod install` from the project folder.
  3. Open `Surprise Me Test.xcworkspace` and run the project on selected device or simulator.
  
+ ## Credits
+ Icons by [8icons](https://icons8.com).
+ 
  ## TODO
  
   - [X] Complete *layout change*
