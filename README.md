@@ -40,7 +40,9 @@ Test task for Suprise Me
  
  ## TODO
  
-  - [ ] Complete *layout change*
+  - [X] Complete *layout change*
   - [X] Add unit tests
+  - [ ] **UPD:** Add more unit tests
   - [X] Add UI tests
+  - [ ] **UPD:** Add more UI tests
   - [ ] Complete Readme.md
