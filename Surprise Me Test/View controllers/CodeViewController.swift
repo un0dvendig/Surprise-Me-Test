@@ -88,7 +88,6 @@ class CodeViewController: UIViewController {
         }
     }
     
-    
     @objc
     private func handleSendAgain(_ tap: UITapGestureRecognizer) {
         guard let view = viewReference else {

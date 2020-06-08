@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		220BF455D67E817612C16394 /* Pods_Surprise_Me_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A1570F246D4703737E18C9 /* Pods_Surprise_Me_Test.framework */; };
+		DD9E6024248E82AA003C1078 /* AnotherSignInOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E6023248E82AA003C1078 /* AnotherSignInOptionsViewController.swift */; };
+		DD9E6026248E8361003C1078 /* AnotherSignInOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E6025248E8361003C1078 /* AnotherSignInOptionsView.swift */; };
+		DD9E602A248EADB3003C1078 /* LeftAlignedIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E6029248EADB3003C1078 /* LeftAlignedIconButton.swift */; };
 		DDEAF60424892026003BD54D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF60324892026003BD54D /* AppDelegate.swift */; };
 		DDEAF60824892026003BD54D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF60724892026003BD54D /* ViewController.swift */; };
 		DDEAF60B24892026003BD54D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEAF60924892026003BD54D /* Main.storyboard */; };
@@ -15,9 +18,9 @@
 		DDEAF61024892026003BD54D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEAF60E24892026003BD54D /* LaunchScreen.storyboard */; };
 		DDEAF623248922C2003BD54D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF622248922C2003BD54D /* Coordinator.swift */; };
 		DDEAF62524892381003BD54D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF62424892381003BD54D /* MainCoordinator.swift */; };
-		DDEAF627248932AB003BD54D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF626248932AB003BD54D /* SignInViewController.swift */; };
+		DDEAF627248932AB003BD54D /* SignInWithPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF626248932AB003BD54D /* SignInWithPhoneNumberViewController.swift */; };
 		DDEAF6292489336B003BD54D /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF6282489336B003BD54D /* SignInCoordinator.swift */; };
-		DDEAF62C24893A9F003BD54D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF62B24893A9F003BD54D /* SignInView.swift */; };
+		DDEAF62C24893A9F003BD54D /* SignInWithPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF62B24893A9F003BD54D /* SignInWithPhoneNumberView.swift */; };
 		DDEAF63024893AE8003BD54D /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF62F24893AE8003BD54D /* AsyncImageView.swift */; };
 		DDEAF63324893B0A003BD54D /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63224893B0A003BD54D /* ImageCache.swift */; };
 		DDEAF63524893B37003BD54D /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63424893B37003BD54D /* DownloadManager.swift */; };
@@ -25,7 +28,7 @@
 		DDEAF63A24893BE7003BD54D /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63924893BE7003BD54D /* CustomError.swift */; };
 		DDEAF63C24893C1E003BD54D /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63B24893C1E003BD54D /* DataWorker.swift */; };
 		DDEAF64024896EBD003BD54D /* PastelessTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF63F24896EBD003BD54D /* PastelessTextField.swift */; };
-		DDEAF643248B8431003BD54D /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF642248B8431003BD54D /* SignInViewModel.swift */; };
+		DDEAF643248B8431003BD54D /* SignInWithPhoneNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF642248B8431003BD54D /* SignInWithPhoneNumberViewModel.swift */; };
 		DDEAF646248B8486003BD54D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF645248B8486003BD54D /* User.swift */; };
 		DDEAF648248B84EB003BD54D /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF647248B84EB003BD54D /* Tour.swift */; };
 		DDEAF64A248B8602003BD54D /* Showplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF649248B8602003BD54D /* Showplace.swift */; };
@@ -43,6 +46,10 @@
 		DDEAF670248CCB31003BD54D /* Surprise_Me_Test_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF66F248CCB31003BD54D /* Surprise_Me_Test_Tests.swift */; };
 		DDEAF678248CE425003BD54D /* PhoneNumber+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF677248CE425003BD54D /* PhoneNumber+Equatable.swift */; };
 		DDEAF680248CEAC5003BD54D /* Surprise_Me_Test_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF67F248CEAC5003BD54D /* Surprise_Me_Test_UITests.swift */; };
+		DDEAF68A248E427B003BD54D /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF689248E427B003BD54D /* Enums.swift */; };
+		DDEAF68C248E639B003BD54D /* SignInWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF68B248E639B003BD54D /* SignInWithEmailViewController.swift */; };
+		DDEAF68E248E650C003BD54D /* SignInWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF68D248E650C003BD54D /* SignInWithEmailView.swift */; };
+		DDEAF690248E6651003BD54D /* SignInWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEAF68F248E6651003BD54D /* SignInWithEmailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +73,9 @@
 		031D0FA6CDCA776FCD8C60AD /* Pods-Surprise Me Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise Me Test.debug.xcconfig"; path = "Target Support Files/Pods-Surprise Me Test/Pods-Surprise Me Test.debug.xcconfig"; sourceTree = "<group>"; };
 		236EFB57D3AF28FC52DE8A0F /* Pods-Surprise Me Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise Me Test.release.xcconfig"; path = "Target Support Files/Pods-Surprise Me Test/Pods-Surprise Me Test.release.xcconfig"; sourceTree = "<group>"; };
 		99A1570F246D4703737E18C9 /* Pods_Surprise_Me_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surprise_Me_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9E6023248E82AA003C1078 /* AnotherSignInOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherSignInOptionsViewController.swift; sourceTree = "<group>"; };
+		DD9E6025248E8361003C1078 /* AnotherSignInOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherSignInOptionsView.swift; sourceTree = "<group>"; };
+		DD9E6029248EADB3003C1078 /* LeftAlignedIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignedIconButton.swift; sourceTree = "<group>"; };
 		DDEAF60024892026003BD54D /* Surprise Me Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Surprise Me Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEAF60324892026003BD54D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDEAF60724892026003BD54D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +85,9 @@
 		DDEAF61124892026003BD54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDEAF622248922C2003BD54D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DDEAF62424892381003BD54D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		DDEAF626248932AB003BD54D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		DDEAF626248932AB003BD54D /* SignInWithPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		DDEAF6282489336B003BD54D /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
-		DDEAF62B24893A9F003BD54D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		DDEAF62B24893A9F003BD54D /* SignInWithPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithPhoneNumberView.swift; sourceTree = "<group>"; };
 		DDEAF62F24893AE8003BD54D /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		DDEAF63224893B0A003BD54D /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		DDEAF63424893B37003BD54D /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
@@ -85,7 +95,7 @@
 		DDEAF63924893BE7003BD54D /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		DDEAF63B24893C1E003BD54D /* DataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorker.swift; sourceTree = "<group>"; };
 		DDEAF63F24896EBD003BD54D /* PastelessTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastelessTextField.swift; sourceTree = "<group>"; };
-		DDEAF642248B8431003BD54D /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		DDEAF642248B8431003BD54D /* SignInWithPhoneNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithPhoneNumberViewModel.swift; sourceTree = "<group>"; };
 		DDEAF645248B8486003BD54D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DDEAF647248B84EB003BD54D /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		DDEAF649248B8602003BD54D /* Showplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Showplace.swift; sourceTree = "<group>"; };
@@ -107,6 +117,10 @@
 		DDEAF67D248CEAC5003BD54D /* Surprise Me Test UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Surprise Me Test UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEAF67F248CEAC5003BD54D /* Surprise_Me_Test_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surprise_Me_Test_UITests.swift; sourceTree = "<group>"; };
 		DDEAF681248CEAC5003BD54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEAF689248E427B003BD54D /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		DDEAF68B248E639B003BD54D /* SignInWithEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithEmailViewController.swift; sourceTree = "<group>"; };
+		DDEAF68D248E650C003BD54D /* SignInWithEmailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithEmailView.swift; sourceTree = "<group>"; };
+		DDEAF68F248E6651003BD54D /* SignInWithEmailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithEmailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF62E24893AD2003BD54D /* Custom views */,
-				DDEAF62D24893AC7003BD54D /* View Controllers */,
+				DDEAF62D24893AC7003BD54D /* View Controller Views */,
 				DDEAF61B24892087003BD54D /* Storyboards */,
 			);
 			path = Views;
@@ -231,8 +245,10 @@
 			isa = PBXGroup;
 			children = (
 				DDEAF60724892026003BD54D /* ViewController.swift */,
-				DDEAF626248932AB003BD54D /* SignInViewController.swift */,
+				DDEAF626248932AB003BD54D /* SignInWithPhoneNumberViewController.swift */,
+				DDEAF68B248E639B003BD54D /* SignInWithEmailViewController.swift */,
 				DDEAF657248BE22B003BD54D /* CodeViewController.swift */,
+				DD9E6023248E82AA003C1078 /* AnotherSignInOptionsViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -258,19 +274,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		DDEAF62D24893AC7003BD54D /* View Controllers */ = {
+		DDEAF62D24893AC7003BD54D /* View Controller Views */ = {
 			isa = PBXGroup;
 			children = (
-				DDEAF62B24893A9F003BD54D /* SignInView.swift */,
+				DD9E6025248E8361003C1078 /* AnotherSignInOptionsView.swift */,
 				DDEAF661248C02DB003BD54D /* CodeView.swift */,
+				DDEAF68D248E650C003BD54D /* SignInWithEmailView.swift */,
+				DDEAF62B24893A9F003BD54D /* SignInWithPhoneNumberView.swift */,
 			);
-			path = "View Controllers";
+			path = "View Controller Views";
 			sourceTree = "<group>";
 		};
 		DDEAF62E24893AD2003BD54D /* Custom views */ = {
 			isa = PBXGroup;
 			children = (
 				DDEAF62F24893AE8003BD54D /* AsyncImageView.swift */,
+				DD9E6029248EADB3003C1078 /* LeftAlignedIconButton.swift */,
 				DDEAF63F24896EBD003BD54D /* PastelessTextField.swift */,
 			);
 			path = "Custom views";
@@ -294,6 +313,7 @@
 			children = (
 				DDEAF63924893BE7003BD54D /* CustomError.swift */,
 				DDEAF65F248C00E8003BD54D /* ConstraintConstants.swift */,
+				DDEAF689248E427B003BD54D /* Enums.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -301,7 +321,8 @@
 		DDEAF641248B841D003BD54D /* View models */ = {
 			isa = PBXGroup;
 			children = (
-				DDEAF642248B8431003BD54D /* SignInViewModel.swift */,
+				DDEAF642248B8431003BD54D /* SignInWithPhoneNumberViewModel.swift */,
+				DDEAF68F248E6651003BD54D /* SignInWithEmailViewModel.swift */,
 				DDEAF663248C08B4003BD54D /* CodeViewModel.swift */,
 			);
 			path = "View models";
@@ -514,19 +535,23 @@
 			files = (
 				DDEAF64024896EBD003BD54D /* PastelessTextField.swift in Sources */,
 				DDEAF6292489336B003BD54D /* SignInCoordinator.swift in Sources */,
+				DD9E602A248EADB3003C1078 /* LeftAlignedIconButton.swift in Sources */,
 				DDEAF63C24893C1E003BD54D /* DataWorker.swift in Sources */,
 				DDEAF63524893B37003BD54D /* DownloadManager.swift in Sources */,
 				DDEAF646248B8486003BD54D /* User.swift in Sources */,
-				DDEAF62C24893A9F003BD54D /* SignInView.swift in Sources */,
+				DDEAF62C24893A9F003BD54D /* SignInWithPhoneNumberView.swift in Sources */,
 				DDEAF660248C00E8003BD54D /* ConstraintConstants.swift in Sources */,
+				DD9E6026248E8361003C1078 /* AnotherSignInOptionsView.swift in Sources */,
 				DDEAF60824892026003BD54D /* ViewController.swift in Sources */,
 				DDEAF63324893B0A003BD54D /* ImageCache.swift in Sources */,
 				DDEAF654248BCE66003BD54D /* PhoneNumber.swift in Sources */,
 				DDEAF63A24893BE7003BD54D /* CustomError.swift in Sources */,
 				DDEAF64C248B94CA003BD54D /* URLBuilder.swift in Sources */,
 				DDEAF666248C1067003BD54D /* UIColor+CustomColor.swift in Sources */,
+				DDEAF68A248E427B003BD54D /* Enums.swift in Sources */,
 				DDEAF64E248BAE5D003BD54D /* UITapGestureRecognizer+didTapAttributedTextInLabel.swift in Sources */,
 				DDEAF65A248BEE28003BD54D /* URLRequestBuilder.swift in Sources */,
+				DDEAF68C248E639B003BD54D /* SignInWithEmailViewController.swift in Sources */,
 				DDEAF63724893B5F003BD54D /* HTTPURLResponse+HasSuccessStatusCodel.swift in Sources */,
 				DDEAF65C248BEE56003BD54D /* Dictionary+PercentEncoded.swift in Sources */,
 				DDEAF664248C08B4003BD54D /* CodeViewModel.swift in Sources */,
@@ -537,9 +562,12 @@
 				DDEAF64A248B8602003BD54D /* Showplace.swift in Sources */,
 				DDEAF62524892381003BD54D /* MainCoordinator.swift in Sources */,
 				DDEAF648248B84EB003BD54D /* Tour.swift in Sources */,
-				DDEAF627248932AB003BD54D /* SignInViewController.swift in Sources */,
+				DD9E6024248E82AA003C1078 /* AnotherSignInOptionsViewController.swift in Sources */,
+				DDEAF68E248E650C003BD54D /* SignInWithEmailView.swift in Sources */,
+				DDEAF627248932AB003BD54D /* SignInWithPhoneNumberViewController.swift in Sources */,
 				DDEAF623248922C2003BD54D /* Coordinator.swift in Sources */,
-				DDEAF643248B8431003BD54D /* SignInViewModel.swift in Sources */,
+				DDEAF690248E6651003BD54D /* SignInWithEmailViewModel.swift in Sources */,
+				DDEAF643248B8431003BD54D /* SignInWithPhoneNumberViewModel.swift in Sources */,
 				DDEAF658248BE22B003BD54D /* CodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

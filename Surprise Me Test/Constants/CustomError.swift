@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// An enumeration for the custom errors.
 public enum CustomError: Error {
     case cannotBuildURL
     case cannotCreateUIImage

@@ -8,6 +8,9 @@
 
 import UIKit
 
-let CONTENTCORENRRADIUS: CGFloat = 30
+/// Layout constants
+
+let CONTENTCORNERRADIUS: CGFloat = 30
 let DRAGVIEWHEIGHT: CGFloat = 4
 let DRAGVIEWWIDTH: CGFloat = 50
+let ADDITIONALCORNERRADIUS: CGFloat = 10

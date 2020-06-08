@@ -1,14 +1,14 @@
 //
-//  SignInViewModel.swift
+//  SignInWithEmailViewModel.swift
 //  Surprise Me Test
 //
-//  Created by Eugene Ilyin on 06.06.2020.
+//  Created by Eugene Ilyin on 08.06.2020.
 //  Copyright © 2020 Eugene Ilyin. All rights reserved.
 //
 
 import Foundation
 
-struct SignInViewModel {
+struct SignInWithEmailViewModel {
     
     // MARK: - Private properties
     
@@ -25,14 +25,6 @@ struct SignInViewModel {
     }
     
     // MARK: - Computed properties
-    
-    var userName: String {
-        return user.name
-    }
-    
-    var userPhoneNumber: PhoneNumber? {
-        return user.phone
-    }
     
     var userEmail: String? {
         return user.email

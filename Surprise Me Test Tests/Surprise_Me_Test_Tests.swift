@@ -431,7 +431,7 @@ class Surprise_Me_Test_Tests: XCTestCase {
         let user = User(id: 123, name: "Chewbacca", phone: phone, email: email)
         let tour = Tour(id: 1, name: "Test tour")
         let showPlace = Showplace(id: 3, name: "Test showplace", imageURLString: nil)
-        let viewModel = SignInViewModel(user: user, tour: tour, showPlace: showPlace)
+        let viewModel = SignInWithPhoneNumberViewModel(user: user, tour: tour, showPlace: showPlace)
         XCTAssertEqual(viewModel.userName, user.name)
         XCTAssertEqual(viewModel.userPhoneNumber, phone)
         XCTAssertEqual(viewModel.userEmail, email)

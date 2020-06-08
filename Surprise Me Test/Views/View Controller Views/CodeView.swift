@@ -26,7 +26,7 @@ class CodeView: UIView {
         view.backgroundColor = .white
         view.clipsToBounds = true
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        view.layer.cornerRadius = CONTENTCORENRRADIUS
+        view.layer.cornerRadius = CONTENTCORNERRADIUS
         return view
     }()
     
@@ -209,7 +209,7 @@ class CodeView: UIView {
         codeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             codeTitleLabel.centerXAnchor.constraint(equalTo: codeContentView.centerXAnchor),
-            codeTitleLabel.topAnchor.constraint(equalTo: codeContentView.topAnchor, constant: CONTENTCORENRRADIUS * 1.5)
+            codeTitleLabel.topAnchor.constraint(equalTo: codeContentView.topAnchor, constant: CONTENTCORNERRADIUS * 1.5)
         ])
     }
     

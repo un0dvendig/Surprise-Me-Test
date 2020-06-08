@@ -3,5 +3,5 @@ use_frameworks!
 
 target 'Surprise Me Test' do
     pod 'SKCountryPicker'
-    pod 'KAPinField' 
+    pod 'KAPinField'
 end

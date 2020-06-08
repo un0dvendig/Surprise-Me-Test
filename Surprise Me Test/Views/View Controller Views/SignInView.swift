@@ -1,5 +1,5 @@
 //
-//  SignInView.swift
+//  SignInWithPhoneNumberView.swift
 //  Surprise Me Test
 //
 //  Created by Eugene Ilyin on 04.06.2020.
@@ -9,7 +9,7 @@
 import UIKit
 import SKCountryPicker
 
-class SignInView: UIView {
+class SignInWithPhoneNumberView: UIView {
     
     // MARK: - Properties
     
@@ -163,8 +163,6 @@ class SignInView: UIView {
         anotherPersonText.addAttribute(NSMutableAttributedString.Key.foregroundColor, value: UIColor.CustomColor.customBlue, range: anotherPersonTextRange)
         label.attributedText = anotherPersonText
         label.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleAsAnotherUser(_:)))
-        label.addGestureRecognizer(tap)
         label.numberOfLines = 1
         label.textAlignment = .center
         return label
@@ -453,19 +451,6 @@ class SignInView: UIView {
             signInNotYouLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
-    
-    // TODO: Handle this
-    @objc
-    private func handleAsAnotherUser(_ tap: UITapGestureRecognizer) {
-        guard let text = signInNotYouLabel.text else {
-                return
-        }
-        let asAnotherPersonText = "Sign in as another peron"
-        let anotherPersonTextRange = (text as NSString).range(of: asAnotherPersonText)
-        if tap.didTapAttributedTextInLabel(label: signInNotYouLabel, inRange: anotherPersonTextRange) {
-            print("should change interface...")
-        }
-    }
 
     /// Returns a new String with phone format: `(***) ***-**-**`.
     private func format(phoneNumber: String, shouldRemoveLastDigit: Bool = false, skipTextFieldHandle: Bool = false) -> String {
@@ -512,7 +497,7 @@ class SignInView: UIView {
 
 }
 
-extension SignInView: UITextFieldDelegate {
+extension SignInWithPhoneNumberView: UITextFieldDelegate {
 /// Original source references:
 /// https://ivrodriguez.com/format-phone-numbers-in-swift/
 /// and
