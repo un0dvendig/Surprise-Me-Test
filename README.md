@@ -30,7 +30,7 @@ Test task for Suprise Me
 
 ### Макеты
 #### Оригинальные макеты
-| Основной Экран | Другой лейаут | Выбор страны | Ввод кода |
+| Основной экран | Другой лейаут | Выбор страны | Ввод кода |
 | --- | --- | --- | --- |
 | ![Main screen](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Original/1%20step%402x.jpg) | ![Different layout](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Original/not%20you%20sign%20in%20email%402x.jpg) | ![Country picker](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Original/country%20code%402x.jpg) | ![Code entry](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Original/Code%402x.jpg) |
 
