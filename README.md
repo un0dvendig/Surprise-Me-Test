@@ -32,26 +32,22 @@ Test task for Suprise Me
 #### Оригинальные макеты
 | Основной Экран | Другой лейаут | Выбор страны | Ввод кода |
 | --- | --- | --- | --- |
-| ![Main screen](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/1%20step%402x.jpg) | ![Different layout](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/not%20you%20sign%20in%20email%402x.jpg) | ![Country picker](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/country%20code%402x.jpg) | ![Code entry](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Code%402x.jpg) |
+| ![Main screen](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Original/1%20step%402x.jpg) | ![Different layout](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Original/not%20you%20sign%20in%20email%402x.jpg) | ![Country picker](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Original/country%20code%402x.jpg) | ![Code entry](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Original/Code%402x.jpg) |
 
 #### Отрефакторенные макеты
 | Другой лейаут | Выбор способа ввода |
 | --- | --- |
-|  |  |
+| <img src="https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Refactored/different%20layout.png" width="300"> | <img src="https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Layouts/Refactored/sign%20in%20method%20choice.png" width="300"> |
 
-#### App flow
-| Оригинальные макеты | Отрефакторенные макеты |
-| --- | --- |
-|  |  |
 
-## Screenshots
+## Screenshots (iPhone 11)
 | Main screen | Country Picker | Code entry |
 | --- | --- | --- | 
-|  |  |  | 
+| ![Screenshot main screen](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Screenshots/Main%20Screen%20(iPhone%2011).png) | ![Screenshot country picker](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Screenshots/Country%20Picker%20(iPhone%2011).png) | ![Screenshot code entry](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Screenshots/Code%20Entry%20(iPhone%2011).png) | 
 
-| Different layout | Another sign in methods |
-| --- | --- |
-|  |  |
+| Different layout | Another sign in methods | Code entry success|
+| --- | --- | --- |
+| ![Screenshot different layout](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Screenshots/Different%20Layout%20(iPhone%2011).png) | ![Screenshot sign in methods](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Screenshots/Sign%20in%20methods%20(iPhone%2011).png) | ![Screenshot code entry success](https://github.com/un0dvendig/Surprise-Me-Test/blob/assets/Screenshots/Code%20Entry%20Success%20(iPhone%2011).png) |
 
 ## Used libraries
   1. [CountryPicker](https://github.com/SURYAKANTSHARMA/CountryPicker)
