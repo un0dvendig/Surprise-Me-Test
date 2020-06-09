@@ -119,7 +119,7 @@ class SignInWithEmailView: UIView {
         label.textColor = .black
         let useAnotherWayText = "use another way"
         
-        let fullText = "or use \(useAnotherWayText) to sign in"
+        let fullText = "or \(useAnotherWayText) to sign in"
         label.text = fullText
         let anotherWayText = NSMutableAttributedString(string: fullText)
         let anotherWayTextRange = (fullText as NSString).range(of: useAnotherWayText)

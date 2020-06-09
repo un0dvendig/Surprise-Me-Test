@@ -425,12 +425,12 @@ class Surprise_Me_Test_Tests: XCTestCase {
 
     // MARK: - View models
     
-    func testSignInViewModel() {
+    func testSignInWithPhoneNumberViewModel() {
         let phone = PhoneNumber(countryCode: "+1", phoneNumber: "2345678901")
         let email = "e@mail.net"
         let user = User(id: 123, name: "Chewbacca", phone: phone, email: email)
-        let tour = Tour(id: 1, name: "Test tour")
-        let showPlace = Showplace(id: 3, name: "Test showplace", imageURLString: nil)
+        let tour = Tour(id: 66, name: "Order 66")
+        let showPlace = Showplace(id: 3, name: "Planet Kashyyyk", imageURLString: nil)
         let viewModel = SignInWithPhoneNumberViewModel(user: user, tour: tour, showPlace: showPlace)
         XCTAssertEqual(viewModel.userName, user.name)
         XCTAssertEqual(viewModel.userPhoneNumber, phone)
@@ -440,10 +440,23 @@ class Surprise_Me_Test_Tests: XCTestCase {
         XCTAssertNotNil(viewModel.showPlaceImageURL) /// Even if the showplace has no image, view model should return random URL
     }
     
+    func testSignInWithEmailViewModel() {
+        let phone = PhoneNumber(countryCode: "+636", phoneNumber: "7826890266")
+        let email = "king_julian@mail.ru"
+        let user = User(id: 777, name: "Julian", phone: phone, email: email)
+        let tour = Tour(id: 6, name: "Showcase tour")
+        let showPlace = Showplace(id: 3, name: "Madagascar", imageURLString: nil)
+        let viewModel = SignInWithEmailViewModel(user: user, tour: tour, showPlace: showPlace)
+        XCTAssertEqual(viewModel.userEmail, email)
+        XCTAssertEqual(viewModel.showPlaceName, showPlace.name)
+        XCTAssertEqual(viewModel.tourName, tour.name)
+        XCTAssertNotNil(viewModel.showPlaceImageURL) /// Even if the showplace has no image, view model should return random URL
+    }
+    
     func testCodeViewModel() {
         let phone = PhoneNumber(countryCode: "+1", phoneNumber: "2345678901")
-        let email = "mail@e.net"
-        let user = User(id: 123, name: "Yoda", phone: phone, email: email)
+        let email = "mail@thisis.net"
+        let user = User(id: 321, name: "Yoda", phone: phone, email: email)
         var viewModel = CodeViewModel(user: user)
         XCTAssertNil(viewModel.currentCheckCode)
         XCTAssertEqual(viewModel.userId, String(user.id))

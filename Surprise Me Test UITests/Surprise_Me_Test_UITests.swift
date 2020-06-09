@@ -65,7 +65,8 @@ class Surprise_Me_Test_UITests: XCTestCase {
         XCTAssertEqual(phoneNumberTextField.placeholderValue, "(720) 505-50-00")
     }
     
-    func testUserEntersPhoneNumber() {
+    /// TODO: Split this test into smaller tests
+    func testUserPhoneNumberTextField() {
         let signInButton = application.buttons["Sign In"]
         signInButton.tap()
         
@@ -96,17 +97,17 @@ class Surprise_Me_Test_UITests: XCTestCase {
         XCTAssertEqual(application.alerts.count, 0)
         
         /// Checking alert presence if textfield is not complete
-        let alertPhoneNumberNoComplete = application.alerts["Phone number is not complete"]
-        XCTAssertFalse(alertPhoneNumberNoComplete.exists)
+        let alertPhoneNumberNotComplete = application.alerts["Phone number is not complete"]
+        XCTAssertFalse(alertPhoneNumberNotComplete.exists)
         phoneNumberTextField.tap()
         phoneNumberTextField.typeText("72")
         XCTAssertEqual(phoneNumberTextField.value as! String, "72")
         confirmButton.tap()
         XCTAssertEqual(application.alerts.count, 1)
-        XCTAssertTrue(alertPhoneNumberNoComplete.exists)
+        XCTAssertTrue(alertPhoneNumberNotComplete.exists)
         
         /// Checking alert hiding
-        okButton = alertPhoneNumberNoComplete.buttons["OK"]
+        okButton = alertPhoneNumberNotComplete.buttons["OK"]
         XCTAssertTrue(okButton.exists)
         okButton.tap()
         XCTAssertEqual(application.alerts.count, 0)
@@ -227,5 +228,179 @@ class Surprise_Me_Test_UITests: XCTestCase {
             }
             XCTAssertTrue(self.application.buttons.count == 1)
         }
+    }
+    
+    func testLayoutChangeToEmail() {
+        let signInButton = application.buttons["Sign In"]
+        signInButton.tap()
+        
+        /// Checking that there is only 1 text field and it is the phone number one
+        XCTAssertEqual(application.textFields.count, 1)
+        let phoneTextField = application.textFields.element
+        XCTAssertEqual(phoneTextField.placeholderValue, "(720) 505-50-00")
+        
+        let notYouButton = application.buttons["Not you? Sign in as another person"]
+        XCTAssertTrue(notYouButton.exists)
+        notYouButton.tap()
+        
+        /// Checking that there is still only 1 text field and it is the email one
+        XCTAssertEqual(application.textFields.count, 1)
+        let emailTextField = application.textFields.element
+        XCTAssertEqual(emailTextField.placeholderValue, "Your e-mail")
+    }
+    
+    func testAnotherSignInMethodsScreen() {
+        let signInButton = application.buttons["Sign In"]
+        signInButton.tap()
+        let notYouButton = application.buttons["Not you? Sign in as another person"]
+        notYouButton.tap()
+        
+        /// Checking that these sign in buttons do not exist
+        let signInWithPhoneNumberButton = application.buttons["Sign in with phone number"]
+        let signInWithGoogleButton = application.buttons["Sign in with Google"]
+        let signInWithAppleButton = application.buttons["Sign in with Apple"]
+        let signInWithFacebookButton = application.buttons["Sign in with Facebook"]
+        XCTAssertFalse(signInWithPhoneNumberButton.exists)
+        XCTAssertFalse(signInWithGoogleButton.exists)
+        XCTAssertFalse(signInWithAppleButton.exists)
+        XCTAssertFalse(signInWithFacebookButton.exists)
+        
+        let useAnotherWayButton = application.buttons["or use another way to sign in"]
+        XCTAssertTrue(useAnotherWayButton.exists)
+        useAnotherWayButton.tap()
+        
+        /// Checking that sign in buttons have appeared on the screen
+        XCTAssertTrue(signInWithPhoneNumberButton.exists)
+        XCTAssertTrue(signInWithGoogleButton.exists)
+        XCTAssertTrue(signInWithAppleButton.exists)
+        XCTAssertTrue(signInWithFacebookButton.exists)
+        
+        /// Checking that tapping any button except the phone number one dismisses the screen
+        signInWithGoogleButton.tap()
+        XCTAssertFalse(signInWithPhoneNumberButton.exists)
+        XCTAssertFalse(signInWithGoogleButton.exists)
+        XCTAssertFalse(signInWithAppleButton.exists)
+        XCTAssertFalse(signInWithFacebookButton.exists)
+        useAnotherWayButton.tap()
+        XCTAssertTrue(signInWithPhoneNumberButton.exists)
+        XCTAssertTrue(signInWithGoogleButton.exists)
+        XCTAssertTrue(signInWithAppleButton.exists)
+        XCTAssertTrue(signInWithFacebookButton.exists)
+        
+        signInWithAppleButton.tap()
+        XCTAssertFalse(signInWithPhoneNumberButton.exists)
+        XCTAssertFalse(signInWithGoogleButton.exists)
+        XCTAssertFalse(signInWithAppleButton.exists)
+        XCTAssertFalse(signInWithFacebookButton.exists)
+        useAnotherWayButton.tap()
+        XCTAssertTrue(signInWithPhoneNumberButton.exists)
+        XCTAssertTrue(signInWithGoogleButton.exists)
+        XCTAssertTrue(signInWithAppleButton.exists)
+        XCTAssertTrue(signInWithFacebookButton.exists)
+        
+        signInWithFacebookButton.tap()
+        XCTAssertFalse(signInWithPhoneNumberButton.exists)
+        XCTAssertFalse(signInWithGoogleButton.exists)
+        XCTAssertFalse(signInWithAppleButton.exists)
+        XCTAssertFalse(signInWithFacebookButton.exists)
+        useAnotherWayButton.tap()
+        XCTAssertTrue(signInWithPhoneNumberButton.exists)
+        XCTAssertTrue(signInWithGoogleButton.exists)
+        XCTAssertTrue(signInWithAppleButton.exists)
+        XCTAssertTrue(signInWithFacebookButton.exists)
+    }
+    
+    func testLayoutChangeToPhoneNumber() {
+        let signInButton = application.buttons["Sign In"]
+        signInButton.tap()
+        
+        /// Checking that there is only 1 text field and it is the phone number one
+        XCTAssertEqual(application.textFields.count, 1)
+        let phoneTextField = application.textFields.element
+        XCTAssertEqual(phoneTextField.placeholderValue, "(720) 505-50-00")
+        
+        let useAnotherWayButton = application.buttons["or use another way to sign in"]
+        XCTAssertFalse(useAnotherWayButton.exists)
+        let notYouButton = application.buttons["Not you? Sign in as another person"]
+        XCTAssertTrue(notYouButton.exists)
+        notYouButton.tap()
+        
+        /// Checking that there is still only 1 text field and it is the email one
+        XCTAssertEqual(application.textFields.count, 1)
+        let emailTextField = application.textFields.element
+        XCTAssertEqual(emailTextField.placeholderValue, "Your e-mail")
+        
+        let signInWithPhoneNumberButton = application.buttons["Sign in with phone number"]
+        XCTAssertFalse(signInWithPhoneNumberButton.exists)
+        useAnotherWayButton.tap()
+        XCTAssertTrue(signInWithPhoneNumberButton.exists)
+        
+        /// Checking that tapping phone number button dissmisses the screen and changes layout
+        signInWithPhoneNumberButton.tap()
+        XCTAssertFalse(signInWithPhoneNumberButton.exists)
+        XCTAssertTrue(useAnotherWayButton.exists)
+        XCTAssertFalse(notYouButton.exists)
+        if !notYouButton.waitForExistence(timeout: 2) {
+            XCTFail("Layout has not been changed")
+        }
+        XCTAssertEqual(application.textFields.count, 1)
+        let currentTextField = application.textFields.element
+        XCTAssertNotEqual(currentTextField.placeholderValue, "Your e-mail")
+        XCTAssertEqual(currentTextField.placeholderValue, "(720) 505-50-00")
+    }
+    
+    /// TODO: Split this test into smaller tests
+    func testUserEmailTextField() {
+        let signInButton = application.buttons["Sign In"]
+        signInButton.tap()
+        let notYouButton = application.buttons["Not you? Sign in as another person"]
+        let confirmButton = application.buttons["Confirm and get link"]
+        XCTAssertFalse(confirmButton.exists)
+        notYouButton.tap()
+        if !confirmButton.waitForExistence(timeout: 2) {
+            XCTFail("Layout has not been changed")
+        }
+        let emailTextField = application.textFields.element
+        XCTAssertEqual(emailTextField.placeholderValue, "Your e-mail")
+        XCTAssertEqual(emailTextField.value as! String, "Your e-mail") /// UI tests return placeholder value as value if text has not been set in text field
+        XCTAssertTrue(confirmButton.exists)
+        
+        /// Checking alert presence if textfield is empty
+        let alertEmptyEmail = application.alerts["Email is empty"]
+        XCTAssertEqual(application.alerts.count, 0)
+        XCTAssertFalse(alertEmptyEmail.exists)
+        confirmButton.tap()
+        XCTAssertEqual(application.alerts.count, 1)
+        XCTAssertTrue(alertEmptyEmail.exists)
+        
+        /// Checking alert hiding
+        var okButton = alertEmptyEmail.buttons["OK"]
+        XCTAssertTrue(okButton.exists)
+        okButton.tap()
+        XCTAssertEqual(application.alerts.count, 0)
+        
+        /// Checking alert presence if entered email is not valid
+        let alertEmailNotValid = application.alerts["Email is not valid"]
+        XCTAssertFalse(alertEmailNotValid.exists)
+        emailTextField.tap()
+        emailTextField.typeText("email")
+        XCTAssertEqual(emailTextField.value as! String, "email")
+        confirmButton.tap()
+        XCTAssertEqual(application.alerts.count, 1)
+        XCTAssertTrue(alertEmailNotValid.exists)
+        /// Checking alert hiding
+        okButton = alertEmailNotValid.buttons["OK"]
+        XCTAssertTrue(okButton.exists)
+        okButton.tap()
+        XCTAssertEqual(application.alerts.count, 0)
+        
+        /// Checking that pressing "done" button hides the keyboard
+        XCTAssertEqual(application.keyboards.count, 0)
+        emailTextField.tap()
+        XCTAssertEqual(application.keyboards.count, 1)
+        let doneButton = application.keyboards.buttons["Done"]
+        XCTAssertTrue(doneButton.exists)
+        doneButton.tap()
+        XCTAssertEqual(application.keyboards.count, 0)
     }
 }
