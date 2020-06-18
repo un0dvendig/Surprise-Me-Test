@@ -69,7 +69,7 @@ Test task for Suprise Me
      - [X] Add more UI tests
   - [ ] Complete Readme.md
      - [X] Add screenshots
-     - [ ] Add refactored interface layouts
-     - [ ] Add app flows
-     - [ ] Add real screenshots
+     - [X] Add refactored interface layouts
+     - [X] Add app flows
+     - [X] Add real screenshots
   - [ ] Fix visual bugs for iPhone 5/5S
