@@ -67,7 +67,7 @@ Test task for Suprise Me
      - [X] Add more unit tests
   - [X] Add UI tests
      - [X] Add more UI tests
-  - [ ] Complete Readme.md
+  - [X] Complete Readme.md
      - [X] Add screenshots
      - [X] Add refactored interface layouts
      - [X] Add app flows
